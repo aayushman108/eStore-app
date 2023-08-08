@@ -35,7 +35,10 @@ const ProductSlice= createSlice({
                 state.products.cart.push(product);
             }
         },
-        removeFromCart: (state, action)=>{},
+        removeFromCart: (state, action)=>{
+            const productId= action.payload;
+            state.products.cart=state.products.cart.filter(product=>product.id!==productId);
+        },
         addToWishlist: (state, action)=>{
             const product= action.payload;
             const checkProduct= state.products.wishlist.find(item=> item.id===product.id);
