@@ -287,3 +287,15 @@ tr{
 .bi-trash3-fill:hover{
   color: rgb(222, 5, 5);
 }
+
+.wishlist-button-wishlist{
+  color:black;
+  text-align: center;
+}
+.wishlist-button-wishlist:hover{
+  background-color:black;
+  color: white;
+}
+.bi-cart{
+  padding-right: 3px;
+}

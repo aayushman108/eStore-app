@@ -46,7 +46,10 @@ const ProductSlice= createSlice({
                 state.products.wishlist.push(product);
             }
         },
-        removeFromWishlist: (state, action)=>{}
+        removeFromWishlist: (state, action)=>{
+            const productId= action.payload;
+            state.products.cart=state.products.cart.filter(product=>product.id!==productId);
+        }
     },
     extraReducers: (builder) =>{
         builder
