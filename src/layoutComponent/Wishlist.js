@@ -11,7 +11,7 @@ const Wishlist = () => {
   const dispatch= useDispatch;
   const products= useSelector(selectAllProductsFromWishlist);
   if(products.length===0){
-    return <h1>No product in the cart</h1>
+    return <h1>No product in the Wishlist</h1>
   }
 
   return (

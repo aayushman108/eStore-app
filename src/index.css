@@ -6,94 +6,6 @@
 body{
   background-color: #f6f2f2;
 }
-.navbar {
-  background-color: #f8f9fa; /* Light gray background */
-  padding: 10px;
-}
-
-.navbar-brand {
-  font-size: 24px;
-  color: #333; /* Dark text color */
-}
-
-.navbar-toggler {
-  border: none; /* Remove border from the toggle button */
-}
-
-.navbar-toggler-icon {
-  color: #333; /* Set color for the toggle button icon */
-}
-
-.nav-item {
-  margin-left: 20px;
-}
-
-.nav-item:last-child {
-  margin-right: 20px; /* Add some right margin to the last nav item */
-}
-
-.dropdown-menu {
-  background-color: #f8f9fa; /* Light gray background for dropdown menu */
-}
-
-.dropdown-item {
-  color: #333; /* Dark text color for dropdown items */
-}
-
-/* Navbar.css */
-
-/* Add some spacing between the links in the center */
-.navbar-nav.mx-auto .nav-item {
-  margin-right: 15px;
-}
-
-/* Align the logo and links properly on mobile devices */
-@media (max-width: 991.98px) {
-  .navbar-nav.mx-auto {
-    text-align: center;
-  }
-  .navbar-nav {
-    margin-top: 10px;
-  }
-  .navbar-brand {
-    margin-right: 0;
-  }
-  .navbar-nav .nav-item {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  /* Hide the center and right-aligned links when collapsed */
-  .navbar-collapse {
-    flex-basis: 100%;
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .navbar-collapse > ul {
-    justify-content: center;
-  }
-
-  .navbar-collapse:last-child {
-    text-align: right;
-  }
-}
-
-.sec-navbar {
-  display: none;
-  position: absolute;
-  top: 0; /* Adjust this value according to your main navbar height */
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.sec-navbar.show {
-  display: block;
-  top: 200px;
-  opacity: 1;
-}
 
 .text-grad-logo{
   font-weight: bold;
@@ -101,14 +13,6 @@ body{
   background-clip: text;
   color: transparent;
   margin-left: 1em;
-}
-
-.nav-link:hover{
-  color: orange;
-}
-
-.nav-link i:hover{
-  color: orange;
 }
 
 .justify-content {
@@ -232,7 +136,7 @@ body{
   transform: scale(1.2,1.2);
 }
 
-.active{
+.card-feature .active{
   color: orange;
 }
 
@@ -298,4 +202,30 @@ tr{
 }
 .bi-cart{
   padding-right: 3px;
+}
+
+
+/*................custom-nav.............*/
+
+.custom-nav{
+  font-size: 18px;
+  font-weight: 400;
+  font-family:'Times New Roman', Times, serif;
+  text-decoration: none;
+  color: rgb(9, 9, 9);
+  padding: 0 0.3em;
+  margin: 0 0.3em;
+}
+.custom-nav:hover{
+  color: orange;
+}
+.search-btn{
+  width:300px;
+  padding: 0.3em 0.5em;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.search-class{
+border-bottom: 1px solid black;
 }

@@ -15,7 +15,7 @@ const Footer = () => {
             <button style={{padding:"0.7em 1.5em"}}>Subscribe</button>
         </div>
       </div>
-      <div className='row row-cols-5 text-start'>
+      <div className='row row-cols-lg-5 row-cols-md-4 row-cols-3-sm row-cols-2 text-start'>
         <div className='col text-center'>
             <p>Shopper.</p>
             <div>

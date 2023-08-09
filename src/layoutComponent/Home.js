@@ -10,7 +10,7 @@ const Home = () => {
     <div>
       {/*....Corousel...*/}
       
-      <div id="carouselExample" className="carousel slide">
+      <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
             <div className='hero-corousel' style={{}}>
@@ -37,7 +37,7 @@ const Home = () => {
           <div className="carousel-item">
             <div className='hero-corousel' style={{}}>
               <img src="/images/watch1.jpg" className="d-block vw-100 corousel-img" style={{top: '-900px'}} alt="..." />
-              <div style={{position: 'absolute', top:'30%', left: '10%', color: 'orange'}}>
+              <div style={{position: 'absolute', top:'30%', left: '10%', color: 'grey'}}>
                 <h5>Has just arrived!</h5>
                 <h1>Huge Summer Collection</h1>
                 <p>Swimwear, Tops, Shorts, Sunglasses and much more...</p>
