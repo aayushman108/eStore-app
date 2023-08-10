@@ -229,23 +229,9 @@ tr{
 }
 .custom-nav:hover{
   color: orange;
+  font-weight: bold;
 }
-/*.custom-nav::before{
-  position: absolute;
-  content: '';
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: orange;
-  transition: width 0.3s ease;
-}
-.custom-nav.active-link::before{
-  width:100%;
-}*/
-.active-link{
-  color: orange;
-}
+
 .search-btn{
   width:300px;
   padding: 0.3em 0.5em;

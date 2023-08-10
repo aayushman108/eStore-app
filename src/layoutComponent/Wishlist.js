@@ -1,57 +1,51 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectAllProductsFromWishlist } from '../ProductSlice';
 import Features from './Features';
 import { featureData } from '../data/Data';
-import { NavLink } from 'react-router-dom';
-import { removeFromWishlist } from '../ProductSlice';
-import { addToCart } from '../ProductSlice';
+import WishlistEachProduct from './WishlistEachProduct';
 
 const Wishlist = () => {
-  const dispatch= useDispatch;
   const products= useSelector(selectAllProductsFromWishlist);
   if(products.length===0){
-    return <h1>No product in the Wishlist</h1>
+    return(
+      <>
+        <div className='d-flex flex-column justify-content-center align-items-center vh-100 w-100 bg-tertiary-color'>
+          <div style={{width: '', height: '60vh'}}>
+            <img src='/images/wishlist.png' style={{height: '100%', width: 'auto'}} alt='...' />
+          </div>
+          <div style={{color: 'grey'}}>
+            <h4 className='carousel-h1 text-center' style={{}}>Hey, it feels so light!</h4>
+            <p className='carousel-p text-center'>There is nothing in your wishlist.</p>
+          </div>
+        </div>
+        <div className="container-fluid" style={{padding:'2em 1em 1em 1.5em', backgroundColor: "#e3e3e3"}}>
+          <div className="row">
+            {featureData.map(feature=> <Features feature={feature} />)}
+          </div>
+        </div>
+      </>
+    )
   }
 
   return (
     <>
-    <h1>Wishlist</h1>
+    <div className='d-flex align-items-center container' style={{marginTop: '3em', marginBottom: '3em'}}>
+      <div className='' style={{width: '10vw'}}>
+        <img src='/images/wishlist.png' style={{width: '100%', height:'auto'}} alt='...' />
+      </div >
+      <h1 className='carousel-h1 fw-bold mx-4'>Wishlist</h1>
+    </div>
     <div className='container' style={{}}>
       <div className='row'>
         <div className='col-12 p-0' style={{}}>
           {products.map((product, index)=>(
-          <div>
-            <tr key={index} className='text-center' style={{}}>
-              <td className='container' style={{width: "55%"}}>
-                <div className='row align-items-center'>
-                  <div className='col-2-lg col-3 p-0' style={{}} >
-                    <NavLink to={`/products/${product.id}`}>
-                      <img className='' src={product.image} style={{width: "100%", height: "auto"}} alt="..." />
-                    </NavLink>
-                  </div>
-                  <div className='text-start col-10-lg col-9' style={{padding:'0.5em'}}>
-                    <h6 style={{}}>{product.title}</h6>
-                    <p style={{}}>Quantity: {product.quantity}</p>
-                    <p style={{marginBottom:'0',fontSize: '18px', fontWeight:'500'}}>${product.price}</p>
-                  </div>
-                </div>
-              </td>
-              <td className='' style={{width:'40%', verticalAlign:'middle'}}>
-                <button className='col-8 col-lg-6 py-2 wishlist-button-wishlist' onClick={()=>dispatch(addToCart({...product, quantity: 1}))} ><i className='bi bi-cart'></i><span>Add to Cart</span></button>
-              </td>
-              <td className='text-start' style={{width: "5%", fontSize:'20px'}}><i class="bi bi-trash3-fill" onClick={()=>dispatch(removeFromWishlist(product.id))}></i></td>
-            </tr>
-            <hr />
-          </div>
+            <WishlistEachProduct key={index} product={product} />
           ))}
         </div>
       </div>
     </div>
-    <NavLink to='/'>
-      <button style={{padding: "0.3em", margin: "3em", backgroundColor: 'black', color:'white'}}><span>&lt;&nbsp;</span>CONTINUE SHOPPING</button>
-    </NavLink>
-    <div className="container-fluid" style={{marginTop:"1em", paddingTop:'1em', backgroundColor: "#e3e3e3"}}>
+    <div className="container-fluid" style={{marginTop:"3em", padding:'2em 1em 1em 1.5em', backgroundColor: "#e3e3e3"}}>
       <div className="row">
         {featureData.map(feature=> <Features feature={feature} />)}
       </div>

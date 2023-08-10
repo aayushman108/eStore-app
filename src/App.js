@@ -12,6 +12,7 @@ import MenProducts from './layoutComponent/MenProducts';
 import WomenProducts from './layoutComponent/WomenProducts';
 import KidsProducts from './layoutComponent/KidsProducts';
 import Wishlist from './layoutComponent/Wishlist';
+import SearchPage from './layoutComponent/SearchPage';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="blog" element={<Blog />} />
+            <Route path="search" element={<SearchPage />} />
             <Route path="cart" element={<Cart />} />
             <Route path="wishlist" element={<Wishlist />} />
           </Route>
