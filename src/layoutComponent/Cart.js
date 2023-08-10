@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 import { selectAllProductsFromCart } from '../ProductSlice';
 import CartEachProduct from './CartEachProduct';
 import { featureData } from '../data/Data';
@@ -7,7 +7,6 @@ import Features from './Features';
 import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
-  const dispatch= useDispatch;
   const products= useSelector(selectAllProductsFromCart);
   if(products.length===0){
     return <h1>No product in the cart</h1>
@@ -49,14 +48,14 @@ const Cart = () => {
             <p className='col-3 p-1' style={{}}>${total}</p>
           </div>
           <div className='row justify-content-evenly m-0 p-0 text-center' style={{}} >
-            <button className='col-12 p-3' style={{border: 'none',padding: '0.7em', backgroundColor:'#D6AD60'}}>Proceed to Checkout</button>
+            <button className='col-12 p-3 continue-checkout' style={{border: 'none',padding: '0.7em', backgroundColor:'#D6AD60'}}>PROCEED TO CHECKOUT<span>&nbsp;&gt;</span></button>
           </div>
           </div>
         </div>
       </div>
     </div>
     <NavLink to='/'>
-      <button style={{padding: "0.3em", margin: "3em", backgroundColor: 'black', color:'white'}}><span>&lt;&nbsp;</span>CONTINUE SHOPPING</button>
+      <button className='shop-now-btn' style={{margin: "3em"}}><span>&lt;&nbsp;</span>CONTINUE SHOPPING</button>
     </NavLink>
     <div className="container-fluid" style={{marginTop:"1em", paddingTop:'1em', backgroundColor: "#e3e3e3"}}>
       <div className="row">

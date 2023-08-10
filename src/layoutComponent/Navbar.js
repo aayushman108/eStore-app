@@ -5,6 +5,9 @@ import { useSelector } from 'react-redux';
 import { selectAllProductsFromCart, selectAllProductsFromWishlist } from '../ProductSlice';
 
 const Navbar = () => {
+  const activeStyle={
+    color: 'orange',
+  }
   const cartProducts= useSelector(selectAllProductsFromCart);
   const wishlistProducts= useSelector(selectAllProductsFromWishlist);
   return (
@@ -18,10 +21,42 @@ const Navbar = () => {
         <div className="collapse navbar-collapse d-none d-flex-lg" id="navbarNav" style={{display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
           <ul className="navbar-nav " style={{}}>
             <li className="nav-item">
-              <NavLink  className="custom-nav" aria-current="page" to="/">Home</NavLink  >
+              <NavLink className='custom-nav' style= {({isActive})=> isActive? activeStyle: null} aria-current="page" to="/">Home</NavLink  >
             </li>
-            <li className="nav-item">
-              <NavLink  className="custom-nav" to="/products">Shop</NavLink  >
+            <li className="nav-item dropdown position-static">
+              <NavLink className="custom-nav" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Shop
+              </NavLink>
+              <div className="dropdown-menu w-100">
+                <div className='container' style={{}}>
+                  <div className='row row-cols-lg-3 row-cols-2 justify-content-center'>
+                    <div className='col-lg-3 col-sm-4 col-2'>
+                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="men">MEN</NavLink></h5>
+                      <hr />
+                      <p>Clothings</p>
+                      <p>Shoes and Boots</p>
+                      <p>Bags and Accessories</p>
+                      <p>Collection</p>
+                    </div>
+                    <div  className='col-lg-3 col-sm-4 col-2'>
+                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="women">WOMEN</NavLink></h5>
+                      <hr />
+                      <p>Clothings</p>
+                      <p>Shoes and Boots</p>
+                      <p>Bags and Accessories</p>
+                      <p>Collection</p>
+                    </div>
+                    <div  className='col-lg-3 col-sm-4 col-2'>
+                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="kids">KIDS</NavLink></h5>
+                      <hr />
+                      <p>Clothings</p>
+                      <p>Shoes and Boots</p>
+                      <p>Bags and Accessories</p>
+                      <p>Collection</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
             <li className="nav-item dropdown">
               <NavLink  className="custom-nav" role="button" to="#" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +68,7 @@ const Navbar = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <NavLink  className="custom-nav" to="blog">Blog</NavLink  >
+              <NavLink  className="custom-nav" style= {({isActive})=> isActive? activeStyle: null} to="blog">Blog</NavLink  >
             </li>
           </ul>
           <form className="d-flex search-class" role="search">
@@ -46,15 +81,15 @@ const Navbar = () => {
             <p className='text-center my-0' style={{}}>Login</p>
             </div>
             <div className="d-flex justify-content-center flex-column mx-2" style={{position:'relative'}}>
-            <NavLink className="custom-nav text-center" to="wishlist" ><i className="bi bi-heart">
-              {wishlistProducts.length> 0 &&<span class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-warning text-center">
+            <NavLink className="custom-nav text-center" style= {({isActive})=> isActive? activeStyle: null} to="wishlist" ><i className="bi bi-heart">
+              {wishlistProducts.length> 0 &&<span className="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-warning text-center">
                 {wishlistProducts.length}
               </span>}</i></NavLink >
             <p className='text-center my-0' style={{}}>Wishlist</p>
             </div>
             <div className="d-flex justify-content-center flex-column" style={{position:'relative'}}>
-            <NavLink className="custom-nav text-center" to="cart"><i className="bi bi-cart4">
-              {cartProducts.length>0 &&<span class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-warning text-center">
+            <NavLink className="custom-nav text-center" style= {({isActive})=> isActive? activeStyle: null} to="cart"><i className="bi bi-cart4">
+              {cartProducts.length>0 &&<span className="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-warning text-center">
                 {cartProducts.length}
               </span>}</i></NavLink >
             <p className='text-center my-0' style={{}}>Cart</p>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inconsolata:wght@600&family=Julee&family=Lobster&family=Open+Sans:wght@300&family=Orbitron:wght@900&family=Roboto&family=Sora:wght@300&family=Titillium+Web&family=Vidaloka&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -81,6 +82,12 @@ body{
 }
 
 @media (max-width: 1200px) {
+  .corousel-img{
+    top: -400px!important
+  }
+}
+
+@media (max-width: 800px) {
   .corousel-img{
     top: 0!important
   }
@@ -203,20 +210,40 @@ tr{
 .bi-cart{
   padding-right: 3px;
 }
-
+.continue-checkout{
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+}
 
 /*................custom-nav.............*/
 
 .custom-nav{
+  position: relative;
   font-size: 18px;
   font-weight: 400;
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Titillium Web', sans-serif;
   text-decoration: none;
   color: rgb(9, 9, 9);
   padding: 0 0.3em;
   margin: 0 0.3em;
 }
 .custom-nav:hover{
+  color: orange;
+}
+/*.custom-nav::before{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: orange;
+  transition: width 0.3s ease;
+}
+.custom-nav.active-link::before{
+  width:100%;
+}*/
+.active-link{
   color: orange;
 }
 .search-btn{
@@ -227,5 +254,62 @@ tr{
   background-color: transparent;
 }
 .search-class{
-border-bottom: 1px solid black;
+border-bottom: 1px solid rgb(194, 183, 183);
+}
+
+.search-class input{
+  padding-left: 1.2em;
+}
+
+.shop-now-btn{
+  padding: 0.3em 0.5em;
+  color: black;
+  border: 2px solid black;
+  font-family: 'Titillium Web', sans-serif;
+  background-color: transparent;
+  font-weight:400;
+}
+.shop-now-btn:hover{
+  background-color: black;
+  color: white;
+}  
+
+.dropdown-menu{
+  border-radius: 0;
+}
+.custom-dropdown-item{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  color: black;
+}
+.custom-dropdown-item:hover{
+  color: orange;
+}
+/*.............home.............*/
+.carousel-text{
+  position: absolute;
+  top: 30%;
+  left: 18%;
+  color: grey;
+}
+.carousel-h1{
+  font-family: 'Roboto', sans-serif;
+}
+.carousel-h5{
+  font-family: 'Sora', sans-serif;
+}
+.carousel-p{
+  font-family: 'Open Sans', sans-serif;
+}
+.hover-img:hover .shop-now-btn{
+  background-color: black;
+  color: white;
+}
+.subscribe:hover{
+  box-shadow: 0 4px 8px 0 rgba(235, 227, 227, 0.19), 0 6px 20px 0 rgba(227, 217, 217, 0.19);
+}
+.custom-nav.show{
+  color: orange;
 }
