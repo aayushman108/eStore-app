@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { selectAllProducts, selectProductById } from '../ProductSlice';
-import { NavLink } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import EachProduct from './EachProduct';
@@ -69,11 +68,11 @@ const SingleProduct = () => {
           <img src={product.image} style={{width: "95%", height: "auto"}} alt='....'/>
         </div>
         <div className='col-md-6 col-12 product-card' style={{}}>
-          <h1 style={{}}>{product.title}</h1>
-          <p style={{}}>{product.category}</p>
+          <h1 className='carousel-h1' style={{}}>{product.title}</h1>
+          <p className='carousel-p' style={{}}>{product.category}</p>
           <div className='row w-100 mx-0' style={{}}>
             <div className='col-6 fs-4 px-0'>${product.price}</div>
-            <div className='col-6 align-self-center'>{product.rating.rate}</div>
+            <div className='col-6 align-self-center'>{product.rating.rate}<span><i className='bi bi-star-fill px-1'></i></span></div>
           </div>
           <div className='my-4' style={{}}>
             <label htmlFor='sizes'className='label-size'>Sizes<span>(required)</span></label><br />
@@ -88,6 +87,10 @@ const SingleProduct = () => {
             <input type='number' value={noOfItems} onChange={(e)=> setNoOfItems(e.target.value)} className='col-2 text-center' />
             <button className='col-8 col-lg-6 py-2 cart-button' onClick={()=>dispatch(addToCart({...product, quantity: noOfItems}))} ><i className='bi bi-cart px-3'></i><span>Add to Cart</span></button>
             <button className='my-2 py-2 col-6 mt-4 wishlist-button' onClick={()=>dispatch(addToWishlist({...product, quantity: 1}))}><i className='bi bi-heart'></i><span className='px-2'>Add to Wishlist</span></button>
+          </div>
+          <div>
+            <h4 className='carousel-h1'>Description</h4>
+            <p className='carousel-p'>{product.description}</p>
           </div>
         </div>
       </div>

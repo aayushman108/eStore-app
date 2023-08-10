@@ -34,7 +34,7 @@ const SearchPage = () => {
      }
   return (
     <>
-    <div className='container'>
+    <div className='container-fluid'>
         <div className='row' style={{marginTop: '3em', marginBottom: '4em'}}>
             <div className='col-lg-1 col-2' style={{}}>
                <img src='/images/search.png' style={{width: '100%', height:'auto'}} alt='...' />
@@ -43,7 +43,7 @@ const SearchPage = () => {
                 <h5 className='carousel-h1'>Results for {searchTerm}...</h5> 
             </div>
         </div>
-        <div className= 'row row-cols-5-lg row-cols-4-md row-cols-3 justify-content-center g-4'>
+        <div className= 'row row-cols-6-lg row-cols-5-md row-cols-4 justify-content-center g-4'>
           {filteredProducts.map(product=> <EachProduct key={product.id} product={product} />)}
         </div>
     </div>

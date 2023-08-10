@@ -37,7 +37,7 @@ const Navbar = () => {
                 <div className='container' style={{}}>
                   <div className='row row-cols-lg-3 row-cols-2 justify-content-center'>
                     <div className='col-lg-3 col-sm-4 col-2'>
-                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="men">MEN</NavLink></h5>
+                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="/products?category=men's clothing">MEN</NavLink></h5>
                       <hr />
                       <p>Clothings</p>
                       <p>Shoes and Boots</p>
@@ -45,7 +45,7 @@ const Navbar = () => {
                       <p>Collection</p>
                     </div>
                     <div  className='col-lg-3 col-sm-4 col-2'>
-                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="women">WOMEN</NavLink></h5>
+                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="/products?category=women's clothing&category=jewelery">WOMEN</NavLink></h5>
                       <hr />
                       <p>Clothings</p>
                       <p>Shoes and Boots</p>
@@ -53,7 +53,15 @@ const Navbar = () => {
                       <p>Collection</p>
                     </div>
                     <div  className='col-lg-3 col-sm-4 col-2'>
-                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="kids">KIDS</NavLink></h5>
+                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="/products?category=electronics">KIDS</NavLink></h5>
+                      <hr />
+                      <p>Clothings</p>
+                      <p>Shoes and Boots</p>
+                      <p>Bags and Accessories</p>
+                      <p>Collection</p>
+                    </div>
+                    <div  className='col-lg-3 col-sm-4 col-2'>
+                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="/products">All Products</NavLink></h5>
                       <hr />
                       <p>Clothings</p>
                       <p>Shoes and Boots</p>
