@@ -14,7 +14,7 @@ const Home = () => {
     <div>
       {/*....Corousel...*/}
       
-      <div id="carouselExample" className="carousel slide">
+      <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
             <div className='hero-corousel' style={{}}>

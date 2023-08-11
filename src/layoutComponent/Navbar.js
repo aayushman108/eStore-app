@@ -36,7 +36,7 @@ const Navbar = () => {
               <NavLink className="custom-nav dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Pages
               </NavLink>
-              <div className="dropdown-menu container-fluid">
+              <div className="dropdown-menu container w-100" style={{margin: '1em 2em',boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2)'}}>
                 <div className='row row-cols-md-2 row-cols-1 justify-content-center w-100 my-3 p-0' style={{}}>
                   <div className='col-lg-4 col-10 mx-4' style={{}}>
                     <div style={{ position: 'relative'}}>
@@ -47,7 +47,7 @@ const Navbar = () => {
                       <h3 className='carousel-h1 mt-3 mb-2'>About Our Store</h3>
                       <p className='carousel-p'>Open created shall two he second moving whose. He face whose two upon, fowl behold waters. Fly there their day creepeth. Darkness beginning spirit after. Creepeth subdue. Brought may, first. Under living that. For morning whales saw were had seed can't divide it light shall moveth, us blessed given wherein.</p>
                     </div>
-                    <button className='shop-now-btn'>LEARN MORE ABOUT US</button>
+                    <navLink to=''><button className='shop-now-btn'>LEARN MORE ABOUT US</button></navLink>
                   </div>
                   <div className='col-lg-4 col-10 mx-4' style={{paddingLeft: '2em'}}>
                     <h2 className='carousel-h1'>Contact Us</h2>
@@ -75,7 +75,7 @@ const Navbar = () => {
                         <p  className='carousel-h4'>careers@example.com</p>
                       </div>
                     </div>
-                    <button className='shop-now-btn'>SEE MORE</button>
+                    <NavLink to=''><button className='shop-now-btn'>SEE MORE</button></NavLink>
                   </div>
                 </div>
               </div>
@@ -123,18 +123,44 @@ const Navbar = () => {
       <div className="offcanvas-body">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <NavLink  className="nav-link" to="">Home</NavLink  >
+            <NavLink  className="custom-nav" to="/">Home</NavLink  >
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="">About</NavLink  >
+            <NavLink  className="custom-nav" to="">Shop</NavLink  >
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="">Services</NavLink  >
+            <NavLink  className="custom-nav" to="">About</NavLink  >
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="">Contact</NavLink  >
+            <NavLink  className="custom-nav" to="">Contact</NavLink  >
+          </li>
+          <li className="nav-item">
+            <NavLink  className="custom-nav" to="">Blog</NavLink  >
           </li>
         </ul>
+        <form className="d-flex mt-4" style={{borderBottom: '1px solid black', marginBottom: '3em'}} role="search" onSubmit={handleSearch}>
+          <input className="w-100 px-3"  style={{border: 'none', outline: 'none'}} type="search" placeholder="Find your product" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)} />
+          <button className="btn"  style={{}} type="submit"><i className="bi bi-search custom-nav"></i></button>
+        </form>
+        <div className='mt-4 d-flex flex-wrap justify-content-evenly'>
+        <div>
+        <i data-bs-target="#exampleModalToggle" data-bs-toggle="modal" className="bi bi-person-circle custom-nav" ></i><span>Log in</span>
+        </div>
+        <div>
+        <NavLink className="custom-nav text-center" to="wishlist" ><i className="bi bi-heart">
+              {wishlistProducts.length> 0 &&<span className="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-warning text-center">
+                {wishlistProducts.length}
+              </span>}</i>
+        </NavLink ><span>Wishlist</span>
+        </div>
+        <div>
+        <NavLink className="custom-nav text-center" to="cart"><i className="bi bi-cart4">
+              {cartProducts.length>0 &&<span className="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-warning text-center">
+                {cartProducts.length}
+              </span>}</i>
+        </NavLink ><span>Cart</span>
+        </div>
+        </div>
       </div>
     </div>
     <LogIn />
