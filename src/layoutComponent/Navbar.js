@@ -27,57 +27,60 @@ const Navbar = () => {
         <div className="collapse navbar-collapse d-none d-flex-lg" id="navbarNav" style={{display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
           <ul className="navbar-nav " style={{}}>
             <li className="nav-item">
-              <NavLink className='custom-nav' aria-current="page" to="/">Home</NavLink  >
+              <NavLink className='custom-nav' to="/">Home</NavLink  >
+            </li>
+            <li className="nav-item">
+              <NavLink className="custom-nav" to="products" >Shop</NavLink>
             </li>
             <li className="nav-item dropdown position-static">
-              <NavLink className="custom-nav" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Shop
+              <NavLink className="custom-nav dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pages
               </NavLink>
-              <div className="dropdown-menu w-100">
-                <div className='container' style={{}}>
-                  <div className='row row-cols-lg-3 row-cols-2 justify-content-center'>
-                    <div className='col-lg-3 col-sm-4 col-2'>
-                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="/products?category=men's clothing">MEN</NavLink></h5>
-                      <hr />
-                      <p>Clothings</p>
-                      <p>Shoes and Boots</p>
-                      <p>Bags and Accessories</p>
-                      <p>Collection</p>
+              <div className="dropdown-menu container-fluid">
+                <div className='row row-cols-md-2 row-cols-1 justify-content-center w-100 my-3 p-0' style={{}}>
+                  <div className='col-lg-4 col-10 mx-4' style={{}}>
+                    <div style={{ position: 'relative'}}>
+                      <img src='/images/about2.jpg' style={{width: '100%'}} alt='...' />
+                      <h3 className='carousel-h1' style={{color:'white', position: 'absolute', top: '50%', left: '50%', transform:'translate(-50%, -50%)'}} >We believe, we can<br /> all make a stylish</h3>
                     </div>
-                    <div  className='col-lg-3 col-sm-4 col-2'>
-                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="/products?category=women's clothing&category=jewelery">WOMEN</NavLink></h5>
-                      <hr />
-                      <p>Clothings</p>
-                      <p>Shoes and Boots</p>
-                      <p>Bags and Accessories</p>
-                      <p>Collection</p>
+                    <div>
+                      <h3 className='carousel-h1 mt-3 mb-2'>About Our Store</h3>
+                      <p className='carousel-p'>Open created shall two he second moving whose. He face whose two upon, fowl behold waters. Fly there their day creepeth. Darkness beginning spirit after. Creepeth subdue. Brought may, first. Under living that. For morning whales saw were had seed can't divide it light shall moveth, us blessed given wherein.</p>
                     </div>
-                    <div  className='col-lg-3 col-sm-4 col-2'>
-                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="/products?category=electronics">KIDS</NavLink></h5>
-                      <hr />
-                      <p>Clothings</p>
-                      <p>Shoes and Boots</p>
-                      <p>Bags and Accessories</p>
-                      <p>Collection</p>
+                    <button className='shop-now-btn'>LEARN MORE ABOUT US</button>
+                  </div>
+                  <div className='col-lg-4 col-10 mx-4' style={{paddingLeft: '2em'}}>
+                    <h2 className='carousel-h1'>Contact Us</h2>
+                    <div>
+                      <h4 className='carousel-h1'><i class="bi bi-telephone-fill"></i>Call to Us</h4>
+                      <p>We're available from 10am to 10pm<br /> EST, 7days a week</p>
+                      <div>
+                        <p className='carousel-p fw-bold m-0'>Customer service:</p>
+                        <p  className='carousel-h4'>6-146-389-574</p>
+                      </div>
+                      <div>
+                        <p className='carousel-p fw-bold m-0'>Careers:</p>
+                        <p  className='carousel-h4'>6-146-389-574</p>
+                      </div>
                     </div>
-                    <div  className='col-lg-3 col-sm-4 col-2'>
-                      <h5 className='text-center mt-2'><NavLink className="custom-dropdown-item px-1" to="/products">All Products</NavLink></h5>
-                      <hr />
-                      <p>Clothings</p>
-                      <p>Shoes and Boots</p>
-                      <p>Bags and Accessories</p>
-                      <p>Collection</p>
+                    <hr />
+                    <div>
+                      <h4 className='carousel-h1'><i class="bi bi-envelope-fill"></i>Write to Us</h4>
+                      <div>
+                        <p className='carousel-p fw-bold m-0'>Customer service:</p>
+                        <p  className='carousel-h4'>customer@example.com</p>
+                      </div>
+                      <div>
+                        <p className='carousel-p fw-bold m-0'>Careers:</p>
+                        <p  className='carousel-h4'>careers@example.com</p>
+                      </div>
                     </div>
+                    <button className='shop-now-btn'>SEE MORE</button>
                   </div>
                 </div>
               </div>
             </li>
-            <li className="nav-item">
-              <NavLink  className="custom-nav" to="about">About</NavLink  >
-            </li>
-            <li className="nav-item">
-              <NavLink  className="custom-nav" to="contact">Contact</NavLink  >
-            </li>
+            
             <li className="nav-item">
               <NavLink  className="custom-nav" to="blog">Blog</NavLink  >
             </li>
