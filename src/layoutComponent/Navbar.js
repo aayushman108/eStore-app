@@ -47,12 +47,12 @@ const Navbar = () => {
                       <h3 className='carousel-h1 mt-3 mb-2'>About Our Store</h3>
                       <p className='carousel-p'>Open created shall two he second moving whose. He face whose two upon, fowl behold waters. Fly there their day creepeth. Darkness beginning spirit after. Creepeth subdue. Brought may, first. Under living that. For morning whales saw were had seed can't divide it light shall moveth, us blessed given wherein.</p>
                     </div>
-                    <navLink to=''><button className='shop-now-btn'>LEARN MORE ABOUT US</button></navLink>
+                    <NavLink to=''><button className='shop-now-btn'>LEARN MORE ABOUT US</button></NavLink>
                   </div>
                   <div className='col-lg-4 col-10 mx-4' style={{paddingLeft: '2em'}}>
                     <h2 className='carousel-h1'>Contact Us</h2>
                     <div>
-                      <h4 className='carousel-h1'><i class="bi bi-telephone-fill"></i>Call to Us</h4>
+                      <h4 className='carousel-h1'><i class="bi bi-telephone mx-1" style={{color:'orange'}}></i>Call to Us</h4>
                       <p>We're available from 10am to 10pm<br /> EST, 7days a week</p>
                       <div>
                         <p className='carousel-p fw-bold m-0'>Customer service:</p>
@@ -65,7 +65,7 @@ const Navbar = () => {
                     </div>
                     <hr />
                     <div>
-                      <h4 className='carousel-h1'><i class="bi bi-envelope-fill"></i>Write to Us</h4>
+                      <h4 className='carousel-h1'><i class="bi bi-envelope mx-1" style={{color:'orange'}}></i>Write to Us</h4>
                       <div>
                         <p className='carousel-p fw-bold m-0'>Customer service:</p>
                         <p  className='carousel-h4'>customer@example.com</p>
@@ -75,7 +75,7 @@ const Navbar = () => {
                         <p  className='carousel-h4'>careers@example.com</p>
                       </div>
                     </div>
-                    <NavLink to=''><button className='shop-now-btn'>SEE MORE</button></NavLink>
+                    <NavLink to='contact'><button className='shop-now-btn'>SEE MORE</button></NavLink>
                   </div>
                 </div>
               </div>

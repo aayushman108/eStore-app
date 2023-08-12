@@ -330,3 +330,14 @@ button{
 .page-link:hover{
   color: orange;
 }
+.form-control.custom{
+  padding: 0.5em 0.7em;
+  border-radius: 2px;
+}
+.form-control.custom:focus{
+  border-color: none;
+  box-shadow: 0 0 0 0.2rem rgba(14, 14, 14, 0.25);
+}
+.form-control.custom-textarea{
+  height: 200px;
+}

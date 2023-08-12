@@ -9,7 +9,7 @@ const LogIn = () => {
                 <div className="modal-content">
                   <div className="modal-header">
                     <h1 className="modal-title fs-5" id="exampleModalToggleLabel">
-                      <span style={{borderBottom: "2px solid green", padding:"0.3em", color: "green"}}><i className="bi bi-lock"></i>Sign in</span>
+                      <span style={{borderBottom: "2px solid orange", padding:"0.3em", color: "orange"}}><i className="bi bi-lock"></i>Sign in</span>
                       <span style={{padding:"0.3em", marginLeft: "1em", cursor:"pointer"}} data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"><i className="bi bi-person"></i>Sign up</span>
                     </h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -18,11 +18,11 @@ const LogIn = () => {
                     <form className="row g-3 needs-validation" novalidate>
                       <div className="col-md-12">
                         <label htmlFor="validationCustom01" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="validationCustom01" placeholder="example@gmail.com" required />
+                        <input type="email" className="form-control custom" id="validationCustom01" placeholder="example@gmail.com" required />
                       </div>
                       <div className="col-md-12">
-                        <label htmlFor="validationCustom02" className="form-label">Last name</label>
-                        <input type="text" className="form-control" id="validationCustom02" required />
+                        <label htmlFor="validationCustom02" className="form-label">Password</label>
+                        <input type="password" id="validationCustom02" className="form-control custom" aria-describedby="passwordHelpBlock" required />
                       </div>
                       <div className="col-8">
                         <div className="form-check">
@@ -31,10 +31,10 @@ const LogIn = () => {
                         </div>
                       </div>
                       <div className="col-4">
-                        <NavLink className="" to="">Forgot password?</NavLink>
+                        <NavLink className="" to="" style={{textDecoration: 'none'}}>Forgot password?</NavLink>
                       </div>
                       <div className="col-12 text-center">
-                        <button className="btn btn-primary w-100 " type="submit">Sign in</button>
+                        <button className="shop-now-btn w-100 " type="submit">Sign in</button>
                       </div>
                     </form>
                   </div>
@@ -47,7 +47,7 @@ const LogIn = () => {
                   <div className="modal-header">
                     <h1 className="modal-title fs-5" id="exampleModalToggleLabel2">
                       <span style={{ padding:"0.3em", cursor: "pointer"}} data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><i className="bi bi-lock"></i>Sign in</span>
-                      <span style={{borderBottom: "2px solid green", color:"green", padding:"0.3em", marginLeft: "1em"}}><i className="bi bi-person"></i>Sign up</span>
+                      <span style={{borderBottom: "2px solid orange", color:"orange", padding:"0.3em", marginLeft: "1em"}}><i className="bi bi-person"></i>Sign up</span>
                     </h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
@@ -55,22 +55,22 @@ const LogIn = () => {
                   <form className="row g-3 needs-validation" novalidate>
                       <div className="col-md-12">
                         <label htmlFor="validationCustom03" className="form-label">Full name</label>
-                        <input type="text" className="form-control" id="validationCustom03" required />
+                        <input type="text" className="form-control custom" id="validationCustom03" required />
                       </div>
                       <div className="col-md-12">
                         <label htmlFor="validationCustom04" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="validationCustom04" placeholder="example@gmail.com" required />
+                        <input type="email" className="form-control custom" id="validationCustom04" placeholder="example@gmail.com" required />
                       </div>
                       <div className="col-md-12">
                         <label htmlFor="validationCustom05" className="form-label">Password</label>
-                        <input type="password" className="form-control" id="validationCustom05" required />
+                        <input type="password" className="form-control custom" id="validationCustom05" required />
                       </div>
                       <div className="col-md-12">
                         <label htmlFor="validationCustom06" className="form-label">Confirm password</label>
-                        <input type="password" className="form-control" id="validationCustom06" required />
+                        <input type="password" className="form-control custom" id="validationCustom06" required />
                       </div>
                       <div className="col-12 text-center">
-                        <button className="btn btn-primary w-100 " type="submit">Sign up</button>
+                        <button className="shop-now-btn w-100 " type="submit">Sign up</button>
                       </div>
                     </form>
                   </div>
