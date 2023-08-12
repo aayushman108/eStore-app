@@ -12,14 +12,14 @@ const Home = () => {
   }
   return (
     <div>
-      {/*....Corousel...*/}
+      {/*..................................Corousel.......................................*/}
       
       <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
             <div className='hero-corousel' style={{}}>
               <img src="/images/watch.jpg" className="d-block vw-100 corousel-img" style={{top: '-600px'}} alt="..." />
-              <div className='carousel-text' style={{}}>
+              <div className='carousel-text' style={{color:'black'}}>
                 <h5 className='carousel-h5'>Has just arrived!</h5>
                 <h1 className='carousel-h1'>Huge Summer Collection</h1>
                 <p className='carousel-p'>Swimwear, Tops, Shorts, Sunglasses and much more...</p>
@@ -30,7 +30,7 @@ const Home = () => {
           <div className="carousel-item">
             <div className='hero-corousel' style={{}}>
               <img src="/images/bag.jpg" className="d-block vw-100 corousel-img" style={{top: '-1000px'}} alt="..." />
-              <div className='carousel-text' style={{}}>
+              <div className='carousel-text' style={{color: 'white'}}>
                 <h5 className='carousel-h5'>Has just arrived!</h5>
                 <h1 className='carousel-h1'>Huge Summer Collection</h1>
                 <p className='carousel-p'>Swimwear, Tops, Shorts, Sunglasses and much more...</p>
@@ -39,7 +39,7 @@ const Home = () => {
             </div>
           </div>
           <div className="carousel-item">
-            <div className='hero-corousel' style={{}}>
+            <div className='hero-corousel' style={{ color: 'white'}}>
               <img src="/images/watch1.jpg" className="d-block vw-100 corousel-img" style={{top: '-900px'}} alt="..." />
               <div className="carousel-text" style={{}}>
                 <h5 className='carousel-h5'>Has just arrived!</h5>
@@ -59,12 +59,13 @@ const Home = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      
-      <div className="container" style={{marginTop:"20px", marginBottom:"15vh", paddingBottom: "1em", borderBottom: "1px solid grey"}}>
+      {/*..................................features.....................................*/}
+      <div className="container home-features" style={{}}>
         <div className="row">
           {featureData.map(feature=> <Features feature={feature} />)}
         </div>
       </div>
+      {/*...............................new collection.............................*/}
       <div className="container-lg">
       <div className="text-center">
         <p>NEW COLLECTION</p>
@@ -73,27 +74,28 @@ const Home = () => {
       </div>
       <div className="container" style={{marginTop: '10vh', marginBottom:'15vh'}}>
         <div className="row justify-content-evenly">
-          <div className="col-4 hover-img" style={{height: "60vh", position:"relative", display:"grid", placeItems:"center", overflow:"hidden"}}>
-            <img src="/images/womens dress.jpg" className="d-block w-100" style={{height:"auto", position:"absolute" }} alt="..." />
+          <div className="col-4 hover-img" style={{}}>
+            <img src="/images/womens dress.jpg" className="d-block w-100" style={{}} alt="..." />
             <NavLink to="products"><button className='shop-now-btn' style={{position: 'absolute'}}>SHOP NOW<i class="bi bi-arrow-right"></i></button></NavLink>
           </div>
-          <div className="col-7 hover-img" style={{height: "60vh", position:"relative", display:"grid", placeItems:"center", overflow:"hidden"}}>
-            <img src="/images/watch1.jpg" className="d-block w-100" style={{height:"auto", position:"absolute" }} alt="..." />
+          <div className="col-7 hover-img" style={{}}>
+            <img src="/images/watch1.jpg" className="d-block w-100" style={{}} alt="..." />
             <NavLink to="products"><button className='shop-now-btn' style={{position: 'absolute'}}>SHOP NOW<i class="bi bi-arrow-right"></i></button></NavLink>
           </div>
         </div>
         <div className="row justify-content-evenly" style={{marginTop:"2em", marginBottom:"2em"}}>
-          <div className="col-7 hover-img" style={{height: "60vh", position:"relative", display:"grid", placeItems:"center", overflow:"hidden"}}>
-            <img src="/images/jordon.jpg" className="d-block w-100" style={{height:"auto", position:"absolute" }} alt="..." />
+          <div className="col-7 hover-img" style={{}}>
+            <img src="/images/jordon.jpg" className="d-block w-100" style={{}} alt="..." />
             <NavLink to="products"><button className='shop-now-btn' style={{position: 'absolute'}}>SHOP NOW<i class="bi bi-arrow-right"></i></button></NavLink>
           </div>
-          <div className="col-4 hover-img" style={{height: "60vh", position:"relative", display:"grid", placeItems:"center", overflow:"hidden"}}>
-            <img src="/images/shirt3.jpg" className="d-block w-100" style={{height:"auto", position:"absolute" }} alt="..." />
+          <div className="col-4 hover-img" style={{}}>
+            <img src="/images/shirt3.jpg" className="d-block w-100" style={{}} alt="..." />
             <NavLink to="products"><button className='shop-now-btn' style={{position: 'absolute'}}>SHOP NOW<i class="bi bi-arrow-right"></i></button></NavLink>
           </div>
         </div>
       </div>
       </div>
+      {/*................................men, women, kids.............................*/}
       <div className="container text-center">
         <div className="row">
           <h1 className="col-12">Top month Sellers</h1>

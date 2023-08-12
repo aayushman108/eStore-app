@@ -12,7 +12,7 @@ const CartEachProduct = ({key, product}) => {
     }
   return (
     <div>
-      <tr key={key} className='text-center' style={{}}>
+      <tr key={key} className='text-center'>
               <td className='container' style={{width: "65%"}}>
                 <div className='row align-items-center'>
                 <div className='col-3 p-0' style={{}} >

@@ -9,6 +9,7 @@ import { getProductsStatus, getProductsError } from '../ProductSlice';
 import Features from './Features';
 import { featureData } from '../data/Data';
 import { addToCart, addToWishlist } from '../ProductSlice';
+import { responsive } from '../data/Data';
 
 const SingleProduct = () => {
   const [noOfItems, setNoOfItems]= useState(1);
@@ -19,33 +20,6 @@ const SingleProduct = () => {
   const allProducts= useSelector(selectAllProducts);
   const productsStatus= useSelector(getProductsStatus);
   const productsError= useSelector(getProductsError);
-
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 6
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1400 },
-      items: 5
-    },
-    deskTab: {
-      breakpoint: { max: 1400, min:1200 },
-      items: 4
-    },
-    tablet: {
-      breakpoint: { max: 1200, min: 768 },
-      items: 3
-    },
-    mobileLandscape:{
-      breakpoint: { max: 768, min: 576 },
-      items: 2
-    },
-    mobilePortrait: {
-      breakpoint: { max: 576, min: 0 },
-      items: 2
-    }
-    };
 
   const productByCategory= allProducts.filter(item=> item.category===product.category);
   let content;

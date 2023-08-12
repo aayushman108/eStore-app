@@ -92,3 +92,68 @@ export const reviewData= [
 
 ]
 
+export const responsiveReview = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 2000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 2000, min: 1300 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1300, min: 1000 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 1000, min: 0 },
+      items: 1
+    }
+  };
+
+  export const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 6
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1400 },
+      items: 5
+    },
+    deskTab: {
+      breakpoint: { max: 1400, min:1200 },
+      items: 4
+    },
+    tablet: {
+      breakpoint: { max: 1200, min: 768 },
+      items: 3
+    },
+    mobileLandscape:{
+      breakpoint: { max: 768, min: 576 },
+      items: 2
+    },
+    mobilePortrait: {
+      breakpoint: { max: 576, min: 0 },
+      items: 2
+    }
+    };
+
+
+export const brand={
+    products: [
+        {id:1, img: '/images/bag.jpg'},
+        {id:2, img: '/images/watch1.jpg'},
+        {id:3, img: '/images/women1.jpg'},
+        {id:4, img: '/images/shoe.jpg'},
+        {id:5, img: '/images/shirts1.jpg'},
+        {id:6, img: '/images/watch.jpg'}
+    ],
+    logos: [
+        {id:1, img: '/images/zara.png'},
+        {id:2, img: '/images/rolex.png'},
+        {id:3, img: '/images/guchi.png'},
+        {id:4, img: '/images/mango.png'},
+        {id:5, img: '/images/puma.png'},
+        {id:6, img: '/images/adidas.png'}
+    ]
+}

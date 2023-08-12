@@ -1,45 +1,18 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 import { getProductsError, getProductsStatus, selectAllProducts } from '../ProductSlice';
 import EachProduct from './EachProduct';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { responsive } from '../data/Data';
 
 const MenProducts = () => {
-    const dispatch= useDispatch();
 
     const products= useSelector(selectAllProducts);
     const productsStatus= useSelector(getProductsStatus);
     const productsError= useSelector(getProductsError);
 
     const menProducts= products.filter(product=> product.category=== "men's clothing" || product.category=== "electronics");
-
-    const responsive = {
-      superLargeDesktop: {
-        breakpoint: { max: 4000, min: 3000 },
-        items: 6
-      },
-      desktop: {
-        breakpoint: { max: 3000, min: 1400 },
-        items: 5
-      },
-      deskTab: {
-        breakpoint: { max: 1400, min:1200 },
-        items: 4
-      },
-      tablet: {
-        breakpoint: { max: 1200, min: 768 },
-        items: 3
-      },
-      mobileLandscape:{
-        breakpoint: { max: 768, min: 576 },
-        items: 2
-      },
-      mobilePortrait: {
-        breakpoint: { max: 576, min: 0 },
-        items: 2
-      }
-      };
 
     let content;
     if(productsStatus==="loading"){

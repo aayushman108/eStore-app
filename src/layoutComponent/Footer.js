@@ -17,17 +17,17 @@ const Footer = () => {
       </div>
       <div className='row row-cols-lg-5 row-cols-md-4 row-cols-3-sm row-cols-2 text-start'>
         <div className='col text-center mt-3'>
-            <p className='fs-4'><strong>eStore</strong></p>
-            <div>
-              <img src='/images/facebook.png' style={{height:"20px", width:"auto"}} alt='...' />
-              <img src='/images/Youtube.png' style={{height:"20px", width:"auto"}} alt='...' />
-              <img src='/images/Twitter.png' style={{height:"20px", width:"auto"}} alt='...' />
-              <img src='/images/Instagram.png' style={{height:"20px", width:"auto"}} alt='...' />
+            <h1><NavLink  className="navbar-brand custom text-center" to="/">e-Store</NavLink></h1>
+            <div className='social-media'>
+              <img src='/images/facebook.png' alt='...' />
+              <img src='/images/Youtube.png' alt='...' />
+              <img src='/images/Twitter.png' alt='...' />
+              <img src='/images/Instagram.png' alt='...' />
             </div>
         </div>
         <div className='col mt-3'>
             <p className='mb-1'><strong>SUPPORT</strong></p>
-            <NavLink to='' className='nav-link'>Contact Us</NavLink>
+            <NavLink to='contact' className='nav-link'>Contact Us</NavLink>
             <NavLink to='' className='nav-link'>FAQs</NavLink>
             <NavLink to='' className='nav-link'>Size Guide</NavLink>
             <NavLink to='' className='nav-link'>Shopping and Returns</NavLink>
@@ -50,17 +50,17 @@ const Footer = () => {
             <p className='mb-1'><strong>CONTACT</strong></p>
             <NavLink to='' className='nav-link'>1-202-555-0105</NavLink>
             <NavLink to='' className='nav-link'>1-202-555-0106</NavLink>
-            <NavLink to='' className='nav-link'>help@shoppers.com</NavLink>
+            <NavLink to='' className='nav-link'>help@eStore.com</NavLink>
         </div>
       </div>
       <hr />
-      <div className='row'>
+      <div className='row pt-3'>
         <p className='col-6 text-center'><i class="bi bi-c-circle"></i>2023 All rights reserved.</p>
-        <div className='col-6 text-center'>
-            <img src='/images/Paypal.png' style={{height:"25px", width:"auto"}} alt='...' />
-            <img src='/images/Mastercard.png' style={{height:"25px", width:"auto"}} alt='...' />
-            <img src='/images/American_express.png' style={{height:"25px", width:"auto"}} alt='...' />
-            <img src='/images/Visa.png' style={{height:"25px", width:"auto"}} alt='...' />
+        <div className='col-6 text-center payment-image'>
+            <img src='/images/Paypal.png' alt='...' />
+            <img src='/images/Mastercard.png' alt='...' />
+            <img src='/images/American_express.png' alt='...' />
+            <img src='/images/Visa.png' alt='...' />
         </div>
       </div>
     </div>
