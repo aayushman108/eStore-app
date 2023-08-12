@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { selectAllProductsFromWishlist } from '../ProductSlice';
 import Features from './Features';
@@ -6,11 +6,14 @@ import { featureData } from '../data/Data';
 import WishlistEachProduct from './WishlistEachProduct';
 
 const Wishlist = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const products= useSelector(selectAllProductsFromWishlist);
   if(products.length===0){
     return(
       <>
-        <div className='d-flex flex-column justify-content-center align-items-center vh-100 w-100 bg-tertiary-color'>
+        <div className='d-flex flex-column justify-content-center align-items-center w-100 bg-tertiary-color' style={{height:'80vh'}}>
           <div style={{width: '', height: '60vh'}}>
             <img src='/images/wishlist.png' style={{height: '100%', width: 'auto'}} alt='...' />
           </div>
@@ -30,7 +33,7 @@ const Wishlist = () => {
 
   return (
     <>
-    <div className='d-flex align-items-center container' style={{marginTop: '3em', marginBottom: '3em'}}>
+    <div className='d-flex align-items-center container' style={{marginBottom: '3em'}}>
       <div className='' style={{width: '10vw'}}>
         <img src='/images/wishlist.png' style={{width: '100%', height:'auto'}} alt='...' />
       </div >

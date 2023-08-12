@@ -17,7 +17,7 @@ const Footer = () => {
       </div>
       <div className='row row-cols-lg-5 row-cols-md-4 row-cols-3-sm row-cols-2 text-start'>
         <div className='col text-center mt-3'>
-            <h1><NavLink  className="navbar-brand custom text-center" to="/">e-Store</NavLink></h1>
+            <h2><NavLink  className="navbar-brand custom text-center" to="/">e-Store</NavLink></h2>
             <div className='social-media'>
               <img src='/images/facebook.png' alt='...' />
               <img src='/images/Youtube.png' alt='...' />

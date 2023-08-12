@@ -91,6 +91,9 @@ body{
   top: 30%;
   left: 18%;
 }
+.carousel-text h1{
+  font-weight: 500;
+}
 .carousel-h1{
   font-family: 'Roboto', sans-serif;
 }
@@ -200,7 +203,10 @@ border-bottom: 1px solid rgb(194, 183, 183);
 .shop-now-btn:hover{
   background-color: black;
   color: white;
-}  
+}
+.shop-now-btn:active{
+  transform: scale(0.92);
+} 
 
 .dropdown-menu{
   border-radius: 0;
@@ -292,16 +298,24 @@ border-bottom: 1px solid rgb(194, 183, 183);
   background-color: black;
 }
 .cart-button:hover{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
+.cart-button:active{
+  transform: scale(0.95);
+}
+
 .wishlist-button{
   border: none;
   background-color: black;
   color: white;
 }
 .wishlist-button:hover{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
+.wishlist-button:active{
+  transform: scale(0.95);
+}
+
 .label-size{
   font-size: 20px;
   font-weight: 700;
@@ -343,6 +357,9 @@ tr{
 .wishlist-button-wishlist:hover{
   background-color:black;
   color: white;
+}
+.wishlist-button-wishlist:active{
+  transform: scale(0.95);
 }
 .bi-cart{
   padding-right: 3px;
@@ -394,4 +411,13 @@ tr{
 }
 .form-control.custom-textarea{
   height: 200px;
+}
+
+/*..............................breadcrumb..............................*/
+.breadcrumb-li{
+  list-style-type: none;
+  display: inline-block;
+}
+.breadcrumb-link{
+  text-decoration: none;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectAllProducts } from '../ProductSlice';
@@ -7,6 +7,9 @@ import Features from './Features';
 import EachProduct from './EachProduct';
 
 const SearchPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
     const [searchParams]= useSearchParams();
     const searchTerm= searchParams.get('query') || '';
 
@@ -16,12 +19,12 @@ const SearchPage = () => {
      if (filteredProducts.length=== 0){
         return(
             <>
-            <div className='d-flex flex-column justify-content-center align-items-center vh-100 w-100 bg-tertiary-color bg-dark'>
+            <div className='d-flex flex-column justify-content-center align-items-center w-100 bg-tertiary-color' style={{height: '75vh'}}>
                 <div>
-                    <img src='/images/no-search-item.png' alt='...' />
+                    <img src='/images/no-search-item.png' alt='...' style={{}} />
                 </div>
                 <div>
-                    <h4 className='carousel-h1' style={{color: 'grey'}}>No item found for <i>{searchTerm}</i>. Try again...</h4>
+                    <h4 className='carousel-h1'>No item found for <i>{searchTerm}</i>. Try again...</h4>
                 </div>
             </div>
             <div className="container-fluid" style={{padding:'2em 1em 1em 1.5em', backgroundColor: "#e3e3e3"}}>
@@ -35,7 +38,7 @@ const SearchPage = () => {
   return (
     <>
     <div className='container-fluid'>
-        <div className='row' style={{marginTop: '3em', marginBottom: '4em'}}>
+        <div className='row' style={{marginBottom: '4em'}}>
             <div className='col-lg-1 col-2' style={{}}>
                <img src='/images/search.png' style={{width: '100%', height:'auto'}} alt='...' />
             </div>

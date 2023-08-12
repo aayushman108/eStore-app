@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { useSelector} from 'react-redux';
 import { selectAllProductsFromCart } from '../ProductSlice';
 import CartEachProduct from './CartEachProduct';
@@ -7,11 +7,14 @@ import Features from './Features';
 import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const products= useSelector(selectAllProductsFromCart);
   if(products.length===0){
     return(
       <>
-        <div className='d-flex flex-column justify-content-center align-items-center vh-100 w-100 bg-tertiary-color'>
+        <div className='d-flex flex-column justify-content-center align-items-center w-100 bg-tertiary-color' style={{height: '80vh'}}>
           <div style={{height: '50vh'}}>
             <img src='/images/empty-bag.png' style={{height: '100%', width: 'auto'}} alt='...' />
           </div>
@@ -39,8 +42,8 @@ const Cart = () => {
 
   return (
     <>
-    <div className='d-flex align-items-center container' style={{marginTop: '3em', marginBottom: '3em'}}>
-      <div className='' style={{width: '10vw'}}>
+    <div className='d-flex align-items-center container' style={{marginBottom:'3em'}}>
+      <div className='' style={{width: '8vw'}}>
         <img src='/images/bag.png' style={{width: '100%', height:'auto'}} alt='...' />
       </div >
       <h1 className='carousel-h1 fw-bold mx-4'>Shopping cart</h1>

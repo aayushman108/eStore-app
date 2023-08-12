@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {featureData} from '../data/Data';
 import Features from './Features';
 import { NavLink, Outlet } from 'react-router-dom';
@@ -6,6 +6,9 @@ import ReviewSlide from './ReviewSlide';
 import Brands from './Brands';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const activeStyle={
     color:'orange',
     borderBottom: '1px solid orange',

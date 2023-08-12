@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import { selectAllProducts, selectProductById } from '../ProductSlice';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -12,6 +12,9 @@ import { addToCart, addToWishlist } from '../ProductSlice';
 import { responsive } from '../data/Data';
 
 const SingleProduct = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [noOfItems, setNoOfItems]= useState(1);
   const dispatch= useDispatch();
   const {productId}= useParams();
@@ -28,14 +31,13 @@ const SingleProduct = () => {
                     <span class="visually-hidden">Loading...</span>
                 </div>
     }else if(productsStatus==="succeeded"){
-        content= productByCategory.map(product=> <EachProduct key={product.id} product={product} />)
+        content= productByCategory.map(product=> <EachProduct key={product.id} product={product} onClick={()=> window.scrollTo(0, 0)} />)
     }else if(productsStatus==="failed"){
         content=<p>{productsError}</p>
     }
 
   return (
     <>
-    <div className='' style={{height:'100px', width: '100%'}}></div>
     <div className='container'>
       <div className='row row-cols-md-2' style={{}}>
         <div className='col-md-6 col-12 text-center' style={{}}>
@@ -59,7 +61,7 @@ const SingleProduct = () => {
           </div>
           <div className='row w-100 mx-0 my-4'>
             <input type='number' value={noOfItems} onChange={(e)=> setNoOfItems(e.target.value)} className='col-2 text-center' />
-            <button className='col-8 col-lg-6 py-2 cart-button' onClick={()=>dispatch(addToCart({...product, quantity: noOfItems}))} ><i className='bi bi-cart px-3'></i><span>Add to Cart</span></button>
+            <button className='col-8 col-lg-6 py-2 mx-1 cart-button' onClick={()=>dispatch(addToCart({...product, quantity: noOfItems}))} ><i className='bi bi-cart px-3'></i><span>Add to Cart</span></button>
             <button className='my-2 py-2 col-6 mt-4 wishlist-button' onClick={()=>dispatch(addToWishlist({...product, quantity: 1}))}><i className='bi bi-heart'></i><span className='px-2'>Add to Wishlist</span></button>
           </div>
           <div>

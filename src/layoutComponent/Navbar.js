@@ -20,7 +20,7 @@ const Navbar = () => {
     <>
     <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top py-3">
       <div className="container-fluid">
-        <NavLink  className="navbar-brand custom text-center" to="/"><h1 className='fw-bold'>e-Store</h1></NavLink>
+        <NavLink  className="navbar-brand custom text-center" to="/"><h2 className='fw-bold'>e-Store</h2></NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -31,7 +31,7 @@ const Navbar = () => {
               <NavLink className='custom-nav' to="/">Home</NavLink  >
             </li>
             <li className="nav-item">
-              <NavLink className="custom-nav" to="products" >Shop</NavLink>
+              <NavLink className="custom-nav" to="products" >Products</NavLink>
             </li>
             {/*...............................Pages dropdown.............................*/}
             <li className="nav-item dropdown position-static">
@@ -90,7 +90,7 @@ const Navbar = () => {
           {/*..............................search.................................*/}
           <form className="d-flex search-class" role="search" onSubmit={handleSearch}>
             <input className="search-btn" type="search" placeholder="Find your product" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)} />
-            <button className="btn" type="submit"><i className="bi bi-search custom-nav"></i></button>
+            <button className="btn" style={{border: 'none'}} type="submit" disabled={searchTerm.length===0}><i className="bi bi-search custom-nav"></i></button>
           </form>
           {/*..........................login, wishlist, cart...........................*/}
           <div className="navbar-nav px-3" style={{}}>

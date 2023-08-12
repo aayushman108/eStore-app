@@ -1,9 +1,12 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
-    <h1 className='carousel-h1 text-center' style={{margin: '2em 0 1em 0'}} >Contact Us</h1>
+    <h1 className='carousel-h1 text-center mt-4' style={{}} >Contact Us</h1>
     <div className="container-fluid py-4 my-4" style={{}}>
       <div className='row row-cols-md-2 row-cols-1 justify-content-center w-100' style={{}}>
         <div className='col-md-4 col-10 mx-4' style={{}}>

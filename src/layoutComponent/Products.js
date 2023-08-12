@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams} from 'react-router-dom';
 import { selectAllProducts } from '../ProductSlice';
@@ -7,6 +7,9 @@ import { featureData } from '../data/Data';
 import Features from './Features';
 
 const Products = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [searchParams, setSearchParams]= useSearchParams();
   const categories= searchParams.getAll('category');
   const [activeButton, setActiveButton]= useState('button-5');
@@ -45,7 +48,7 @@ const Products = () => {
   
   return (
     <>
-    <div className='container-fluid d-flex flex-wrap justify-content-center p-3 mt-4' style={{marginBottom:'3em', background: 'linear-gradient(to right, black, grey, black)', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
+    <div className='container-fluid d-flex flex-wrap justify-content-center p-3' style={{marginBottom:'3em', background: 'linear-gradient(to right, black, grey, black)', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
       <button className={`product-button ${activeButton=== 'button-1' ? 'btn-active': ''}`} onClick={()=>handleClick("?category=men's clothing", 'button-1')}>Mens</button>
       <button className={`product-button ${activeButton=== 'button-2' ? 'btn-active': ''}`} onClick={()=>handleClick("?category=women's clothing&category=jewelery", 'button-2')}>Womens</button>
       <button className={`product-button ${activeButton=== 'button-3' ? 'btn-active': ''}`} onClick={()=>handleClick("?category=jewelery", 'button-3')}>Jewelery</button>
