@@ -8,12 +8,16 @@ const Navbar = () => {
   const [searchTerm, setSearchTerm]= useState('');
   const navigate= useNavigate();
 
+  const [showOffcanvas, setShowOffcanvas]=useState(false);
+
+  const handleClick= ()=> setShowOffcanvas(!showOffcanvas);
+
   const handleSearch= (e)=>{
     e.preventDefault();
     navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
     setSearchTerm('');
   }
-  
+
   const cartProducts= useSelector(selectAllProductsFromCart);
   const wishlistProducts= useSelector(selectAllProductsFromWishlist);
   return (
@@ -21,7 +25,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top py-3">
       <div className="container-fluid">
         <NavLink  className="navbar-brand custom text-center" to="/"><h2 className='fw-bold'>e-Store</h2></NavLink>
-        <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler" type="button" onClick={handleClick} data-bs-target="#navbarOffcanvas">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse d-none d-flex-lg" id="navbarNav" style={{display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
@@ -118,48 +122,48 @@ const Navbar = () => {
       </div>
     </nav>
 
-{/*.................Offcanvas................*/}
+{/*....................................Offcanvas..................................*/}
 
-    <div className="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas">
+    <div className={`offcanvas offcanvas-end ${showOffcanvas? 'show': ''}`} tabindex="-1" id="navbarOffcanvas">
       <div className="offcanvas-header">
         <h5 className="offcanvas-title">Menu</h5>
-        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" className="btn-close" onClick={handleClick}></button>
       </div>
       <div className="offcanvas-body">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <NavLink  className="custom-nav" to="/">Home</NavLink  >
+            <NavLink  className="custom-nav" to="/" onClick={handleClick} >Home</NavLink  >
           </li>
           <li className="nav-item">
-            <NavLink  className="custom-nav" to="">Shop</NavLink  >
+            <NavLink  className="custom-nav" to="products" onClick={handleClick}>Products</NavLink  >
           </li>
           <li className="nav-item">
-            <NavLink  className="custom-nav" to="">About</NavLink  >
+            <NavLink  className="custom-nav" to="/" onClick={handleClick}>About</NavLink  >
           </li>
           <li className="nav-item">
-            <NavLink  className="custom-nav" to="">Contact</NavLink  >
+            <NavLink  className="custom-nav" to="contact" onClick={handleClick}>Contact</NavLink  >
           </li>
           <li className="nav-item">
-            <NavLink  className="custom-nav" to="">Blog</NavLink  >
+            <NavLink  className="custom-nav" to="/" onClick={handleClick}>Blog</NavLink  >
           </li>
         </ul>
         <form className="d-flex mt-4" style={{borderBottom: '1px solid black', marginBottom: '3em'}} role="search" onSubmit={handleSearch}>
           <input className="w-100 px-3"  style={{border: 'none', outline: 'none'}} type="search" placeholder="Find your product" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)} />
-          <button className="btn"  style={{}} type="submit"><i className="bi bi-search custom-nav"></i></button>
+          <button className="btn" onClick={handleClick}  style={{}} type="submit"><i className="bi bi-search custom-nav"></i></button>
         </form>
         <div className='mt-4 d-flex flex-wrap justify-content-evenly'>
         <div>
-        <i data-bs-target="#exampleModalToggle" data-bs-toggle="modal" className="bi bi-person-circle custom-nav" ></i><span>Log in</span>
+        <i data-bs-target="#exampleModalToggle" onClick={handleClick} data-bs-toggle="modal" className="bi bi-person-circle custom-nav" ></i><span>Log in</span>
         </div>
         <div>
-        <NavLink className="custom-nav text-center" to="wishlist" ><i className="bi bi-heart">
+        <NavLink className="custom-nav text-center" onClick={handleClick} to="wishlist" ><i className="bi bi-heart">
               {wishlistProducts.length> 0 &&<span className="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-warning text-center">
                 {wishlistProducts.length}
               </span>}</i>
         </NavLink ><span>Wishlist</span>
         </div>
         <div>
-        <NavLink className="custom-nav text-center" to="cart"><i className="bi bi-cart4">
+        <NavLink className="custom-nav text-center" onClick={handleClick} to="cart"><i className="bi bi-cart4">
               {cartProducts.length>0 &&<span className="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-warning text-center">
                 {cartProducts.length}
               </span>}</i>
