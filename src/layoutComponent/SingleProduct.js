@@ -78,7 +78,7 @@ const SingleProduct = () => {
         {content}
       </Carousel>
   </div>
-  <div className="container-fluid" style={{marginTop:"3em", paddingTop:'1em', backgroundColor: "#e3e3e3"}}>
+  <div className="container-fluid" style={{padding:'2em 1em 1em 1.5em', marginTop:"3em", backgroundColor: "#e3e3e3"}}>
     <div className="row">
       {featureData.map(feature=> <Features feature={feature} />)}
     </div>

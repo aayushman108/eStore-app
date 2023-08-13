@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectAllProducts } from '../ProductSlice';
 import { featureData } from '../data/Data';
@@ -7,15 +7,17 @@ import Features from './Features';
 import EachProduct from './EachProduct';
 
 const SearchPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-    const [searchParams]= useSearchParams();
-    const searchTerm= searchParams.get('query') || '';
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+    
+    const location= useLocation();
+    const queryParams= new URLSearchParams(location.search);
+    const searchTerm= queryParams.get('query') || '';
 
     const allProducts= useSelector(selectAllProducts);
 
-    const filteredProducts= allProducts.filter(product=> product.title.toLowerCase().includes(searchTerm.toLowerCase()) || product.description.toLowerCase().includes(searchTerm.toLowerCase()));
+    const filteredProducts= allProducts.filter(product=> product.category.toLowerCase().includes(searchTerm.toLowerCase()) || product.title.toLowerCase().includes(searchTerm.toLowerCase()) || product.description.toLowerCase().includes(searchTerm.toLowerCase()));
      if (filteredProducts.length=== 0){
         return(
             <>
