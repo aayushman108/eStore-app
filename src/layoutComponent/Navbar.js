@@ -149,7 +149,7 @@ const Navbar = () => {
         </ul>
         <form className="d-flex mt-4" style={{borderBottom: '1px solid black', marginBottom: '3em'}} role="search" onSubmit={handleSearch}>
           <input className="w-100 px-3"  style={{border: 'none', outline: 'none'}} type="search" placeholder="Find your product" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)} />
-          <button className="btn" onClick={handleClick} disabled={searchTerm.length===0}  style={{}} type="submit"><i className="bi bi-search custom-nav"></i></button>
+          <button className="btn" onClick={handleClick} style={{border: 'none'}} disabled={searchTerm.length===0} type="submit"><i className="bi bi-search custom-nav"></i></button>
         </form>
         <div className='mt-4 d-flex flex-wrap justify-content-evenly'>
         <div>
