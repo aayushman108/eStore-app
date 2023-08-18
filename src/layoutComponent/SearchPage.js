@@ -22,8 +22,8 @@ const SearchPage = () => {
         return(
             <>
             <div className='d-flex flex-column justify-content-center align-items-center w-100 bg-tertiary-color' style={{height: '75vh'}}>
-                <div>
-                    <img src='/images/no-search-item.png' alt='...' style={{}} />
+                <div className=''>
+                    <img className='colored-image' src='/images/no-search-item.png' alt='...' style={{}} />
                 </div>
                 <div>
                     <h4 className='carousel-h1'>No item found for <i>{searchTerm}</i>. Try again...</h4>

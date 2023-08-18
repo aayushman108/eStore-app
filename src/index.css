@@ -150,6 +150,11 @@ button{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
+.colored-image {
+  filter: sepia(80%) brightness(50%) contrast(150%);
+}
+
 .navbar-brand.custom{
   background: linear-gradient(to right, #7689e3, #150357);
   background-clip: text;
